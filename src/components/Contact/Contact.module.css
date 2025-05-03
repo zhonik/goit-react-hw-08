@@ -1,0 +1,31 @@
+.container {
+  border: 1px solid #000;
+  border-radius: 10px;
+  width: 320px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 20px;
+}
+
+.btn {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 4px;
+  font-size: 20px;
+  &:hover {
+    background-color: lightsalmon;
+  }
+}
+
+.margin {
+  margin-right: 6px;
+}
