@@ -5,7 +5,8 @@ import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
 import { FaUserPlus } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contactsOps';
+import { addContact } from '../../redux/contacts/operations';
+import { Button } from '@mui/material';
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
@@ -56,10 +57,10 @@ const ContactForm = () => {
           placeholder='123-45-67'
         />
         <ErrorMessage className={css.error} name='number' component='span' />
-        <button className={css.btn} type='submit'>
+        <Button variant='contained' color='success' className={css.btn} type='submit'>
           Add
           <FaUserPlus size={20} />
-        </button>
+        </Button>
       </Form>
     </Formik>
   );

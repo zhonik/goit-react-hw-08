@@ -15,5 +15,3 @@ const slice = createSlice({
 export const { changeFilter } = slice.actions;
 
 export default slice.reducer;
-
-export const selectChangeFilter = state => state.filters.name;
