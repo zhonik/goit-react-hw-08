@@ -1,5 +1,3 @@
-// import css from './App.module.css';
-
 import { lazy, Suspense, useEffect } from 'react';
 import Layout from '../Layout/Layout';
 import { Route, Routes } from 'react-router-dom';
@@ -9,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectIsRefreshing } from '../../redux/auth/selectors';
 import { refreshUser } from '../../redux/auth/operations';
 import { createTheme, ThemeProvider } from '@mui/material';
+import { Toaster } from 'react-hot-toast';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const RegistrationPage = lazy(() => import('../../pages/RegistrationPage/RegistrationPage'));
@@ -35,6 +34,7 @@ const App = () => {
     <strong>Refreshing user...</strong>
   ) : (
     <ThemeProvider theme={theme}>
+      <Toaster />
       <Layout>
         <Suspense fallback={null}>
           <Routes>
