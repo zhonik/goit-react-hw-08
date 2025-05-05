@@ -9,7 +9,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: 450,
   bgcolor: 'background.paper',
   border: '2px solid #000',
   borderRadius: '10px',
@@ -43,7 +43,7 @@ export default function DeleteModal() {
       aria-describedby='modal-modal-description'
     >
       <Box sx={style}>
-        <Typography variant='h6'>Delete?</Typography>
+        <Typography variant='h6'>Delete contact?</Typography>
         <Button variant='contained' color='success' type='button' onClick={handleDeleteClick}>
           Yes
         </Button>

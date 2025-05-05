@@ -12,9 +12,9 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
-const notifySuccess = () => toast.success('Contact successfully deleted');
-const notifyError = () => toast.success('Не вдалося вилалити контакт');
+const notifyDelete = () => toast.success('Contact successfully deleted');
 const notifyAdd = () => toast.success('Contact successfully added');
+const notifyEdit = () => toast.success('Contact successfully edited');
 
 const slice = createSlice({
   name: 'contacts',
@@ -78,13 +78,9 @@ const slice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = state.items.filter(item => item.id !== action.payload);
-        notifySuccess();
+        notifyDelete();
       })
-      .addCase(deleteContact.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-        notifyError();
-      })
+      .addCase(deleteContact.rejected, handleRejected)
       .addCase(logOut.fulfilled, state => {
         state.items = [];
         state.error = null;
@@ -98,6 +94,7 @@ const slice = createSlice({
         if (index !== -1) {
           state.items[index] = action.payload;
         }
+        notifyEdit();
       })
       .addCase(editContact.rejected, handleRejected);
   },

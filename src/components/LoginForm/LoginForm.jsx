@@ -29,7 +29,7 @@ const LoginForm = () => {
         password: values.password,
       })
     )
-      // .unwrap()
+      .unwrap()
       .then(() => {
         notifySuccess();
       })

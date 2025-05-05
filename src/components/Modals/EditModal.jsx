@@ -38,8 +38,8 @@ export default function EditModal() {
     <Modal
       open={isModalOpen}
       onClose={handleClose}
-      aria-labelledby='modal-modal-title'
-      aria-describedby='modal-modal-description'
+      // aria-labelledby='modal-modal-title'
+      // aria-describedby='modal-modal-description'
     >
       <Box sx={style}>
         <b>Name</b>
@@ -48,14 +48,14 @@ export default function EditModal() {
           autoFocus={true}
           value={editableContact.name}
           onChange={e => dispatch(updateEditableContact({ name: e.target.value }))}
-          sx={{ mb: 2, border: '1px solid black' }}
+          sx={{ mb: 2, padding: '3px 8px' }}
         />
         <b>Number</b>
         <Input
           type='text'
           value={editableContact.number}
           onChange={e => dispatch(updateEditableContact({ number: e.target.value }))}
-          sx={{ mb: 2 }}
+          sx={{ mb: 2, padding: '3px 8px' }}
         />
         <Button variant='contained' color='primary' type='button' onClick={handleEditContact}>
           Edit
