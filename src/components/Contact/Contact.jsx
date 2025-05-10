@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux';
 import s from './Contact.module.css';
 import { FaUser, FaPhoneAlt } from 'react-icons/fa';
-// import { deleteContact } from '../../redux/contacts/operations';
 import { Button } from '@mui/material';
 import { openDeleteModal, openEditModal, setContactToDelete } from '../../redux/contacts/slice';
 import EditModal from '../Modals/EditModal';

@@ -1,6 +1,5 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import css from './ContactForm.module.css';
-import { useId } from 'react';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
 import { FaUserPlus } from 'react-icons/fa';
@@ -38,34 +37,19 @@ const ContactForm = () => {
     actions.resetForm();
   };
 
-  const nameFieldId = useId();
-  const numberFieldId = useId();
-
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={ContactSchema}>
       <Form className={css.form}>
-        <label className={css.label} htmlFor={nameFieldId}>
-          Name
+        <label className={css.label}>
+          Name: <Field className={css.field} type='text' name='name' placeholder='Contact name' />
         </label>
-        <Field
-          className={css.field}
-          type='text'
-          name='name'
-          id={nameFieldId}
-          placeholder='Your name'
-        />
+
         <ErrorMessage className={css.error} name='name' component='span' />
 
-        <label className={css.label} htmlFor={numberFieldId}>
-          Number
+        <label className={css.label}>
+          Number: <Field className={css.field} type='text' name='number' placeholder='123-45-67' />
         </label>
-        <Field
-          className={css.field}
-          type='text'
-          name='number'
-          id={nameFieldId}
-          placeholder='123-45-67'
-        />
+
         <ErrorMessage className={css.error} name='number' component='span' />
         <Button variant='contained' color='success' sx={style} type='submit'>
           Add Contact

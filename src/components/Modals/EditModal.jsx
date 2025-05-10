@@ -35,12 +35,7 @@ export default function EditModal() {
   if (!isModalOpen || !editableContact) return null;
 
   return (
-    <Modal
-      open={isModalOpen}
-      onClose={handleClose}
-      // aria-labelledby='modal-modal-title'
-      // aria-describedby='modal-modal-description'
-    >
+    <Modal open={isModalOpen} onClose={handleClose}>
       <Box sx={style}>
         <b>Name</b>
         <Input

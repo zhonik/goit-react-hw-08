@@ -45,19 +45,19 @@ const RegistrationForm = () => {
       >
         <Form className={s.form}>
           <label className={s.label} htmlFor={nameFieldId}>
-            Name
+            <b>Name</b>
           </label>
           <Field className={s.input} type='text' name='name' id={nameFieldId} />
           <ErrorMessage className={s.error} name='name' component='span' />
 
           <label className={s.label} htmlFor={emailFieldId}>
-            Email
+            <b>Email</b>
           </label>
           <Field className={s.input} type='email' name='email' id={emailFieldId} />
           <ErrorMessage className={s.error} name='email' component='span' />
 
           <label className={s.label} htmlFor={pswrdFieldId}>
-            Password
+            <b>Password</b>
           </label>
           <Field className={s.input} type='password' name='password' id={pswrdFieldId} />
           <ErrorMessage className={s.error} name='password' component='span' />

@@ -46,11 +46,15 @@ const LoginForm = () => {
     <div>
       <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={loginSchema}>
         <Form className={s.form}>
-          <label htmlFor={emailFieldId}>Email</label>
+          <label htmlFor={emailFieldId}>
+            <b>Email</b>
+          </label>
           <Field className={s.input} type='email' name='email' id={emailFieldId} />
           <ErrorMessage className={s.error} name='email' component='span' />
 
-          <label htmlFor={pswrdFieldId}>Password</label>
+          <label htmlFor={pswrdFieldId}>
+            <b>Password</b>
+          </label>
           <Field className={s.input} type='password' name='password' id={pswrdFieldId} />
           <ErrorMessage className={s.error} name='password' component='span' />
 

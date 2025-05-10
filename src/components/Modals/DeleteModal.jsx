@@ -36,12 +36,7 @@ export default function DeleteModal() {
   };
 
   return (
-    <Modal
-      open={isModalOpen}
-      onClose={handleClose}
-      aria-labelledby='modal-modal-title'
-      aria-describedby='modal-modal-description'
-    >
+    <Modal open={isModalOpen} onClose={handleClose}>
       <Box sx={style}>
         <Typography variant='h6'>Delete contact?</Typography>
         <Button variant='contained' color='success' type='button' onClick={handleDeleteClick}>
